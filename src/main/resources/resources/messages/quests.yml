@@ -1,0 +1,9 @@
+# A message says what a text is, never how it looks. It opens with its tone, and every value in
+# braces stands out by itself: a quest in the style its class names (Quest.kt), anything else in
+# the accent. <questTag/> is this plugin's own tag; the tones, the accent and the hint come with
+# VersatiaCore. plugins/VersatiaCore/styles.yml says how each of them looks
+quest:
+  offered: "<neutral><questTag/>{player}, a quest awaits: {quest}."
+  done: "<positive><questTag/>Quest {quest} done: {quest.reward} coins."
+  failed: "<negative><questTag/>Quest {quest} failed."
+  hint: "<hint>Type <accent>/quest</accent> to see your quests."
