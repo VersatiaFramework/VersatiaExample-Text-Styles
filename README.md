@@ -1,6 +1,6 @@
 # VersatiaExample-Text-Styles
 
-Messages that name styles instead of colours: `<positive>Quest {quest} done.` says what the text is, and the server's `plugins/VersatiaCore/styles.yml` says how it looks, for every plugin at once. The styles every plugin shares (`positive`, `negative`, `warning`, `neutral`, `accent`, `hint`, `label`, `heading`, `serverTag`) come with VersatiaCore, and a value in braces takes the accent by itself. The plugin adds two styles of its own, `quest` and its tag `questTag`, and ships their defaults in [`styles.yml`](src/main/resources/styles.yml) next to `plugin.yml`; a [`Quest`](src/main/kotlin/dev/versatia/example/styles/Quest.kt) names the style it is shown in, so `{quest}` needs no tag around it.
+Messages that name styles instead of colours: `<positive>Quest {quest} done.` says what the text is, and the server's `plugins/VersatiaCore/styles.yml` says how it looks, for every plugin at once. The styles every plugin shares (`positive`, `negative`, `warning`, `neutral`, `accent`, `hint`, `clickable`, `label`, `heading`) come with VersatiaCore, and a value in braces takes the accent by itself. The plugin adds two styles of its own, `quest` and its tag `questTag`, and ships their defaults in [`styles.yml`](src/main/resources/styles.yml) next to `plugin.yml`; a [`Quest`](src/main/kotlin/dev/versatia/example/styles/Quest.kt) names the style it is shown in, so `{quest}` needs no tag around it.
 
 Part of the [Versatia examples](https://github.com/VersatiaFramework/VersatiaExamples); documentation: [Styles](https://versatia.dev/docs/messages/styles).
 
@@ -33,16 +33,14 @@ their name in that white too.
 - Write `<accent>{quest}</accent>` in `quest.done`: the name looks like the reward. A value that
   is all a style's tag holds has that style; anywhere else a quest takes the one its class names.
 - Set `questTag: ""` in the server's file and reload: the messages lose the tag and its space,
-  which is part of the style. Then give the server a tag,
-  `serverTag: "<gold><bold>[Realm]</bold></gold> "`, and write `<serverTag/>` in place of
-  `<questTag/>` in a message: every plugin can open a message with the server's own tag.
+  which is part of the style.
 - Delete the `quest` line from the server's file and reload: it is back under a new comment,
   because the plugin's messages need it. To change a style, edit its value; the server's value
   always wins over the plugin's default.
 - Write `<positiv>` in `quest.done` and run `/versatia reload styles`: the reload fails with
   `message "quest.done" in messages/quests.yml cannot be shown: <positiv> is neither a MiniMessage
   tag nor a style; the styles in plugins/VersatiaCore/styles.yml are: accent, hint, negative,
-  neutral, positive, quest, questTag, serverTag, warning. Write \<positiv> to show it as text`, and
+  neutral, positive, quest, questTag, warning. Write \<positiv> to show it as text`, and
   the previous messages stay in use.
 
 ## Building

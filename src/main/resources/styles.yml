@@ -1,9 +1,9 @@
 # The defaults for the two styles of this plugin's own. The file stays in the JAR: when the plugin
 # starts, VersatiaCore adds what the server lacks to plugins/VersatiaCore/styles.yml, the one file
 # an admin edits, and what that file already defines wins. The styles every plugin shares
-# (positive, negative, warning, neutral, accent, hint, label, heading, serverTag) come with VersatiaCore
+# (positive, negative, warning, neutral, accent, hint, clickable, label, heading) come with VersatiaCore
 # The style of a quest: Quest.kt names it, so {quest} takes it in every message
 quest: "<light_purple>"
-# A style may hold text: <questTag/> puts it in front of a message, the space included. It is this
-# plugin's tag, written where the server's own, <serverTag/>, would stand
+# A style may hold text: <questTag/> puts it in front of a message, the space included, right after
+# the tone. It is this plugin's tag
 questTag: "<dark_purple><bold>[Quests]</bold></dark_purple> "
